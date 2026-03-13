@@ -1,3 +1,4 @@
+import FormText from "./FormText";
 
 
 
@@ -5,9 +6,9 @@
 function Form(props) {
    
   return (
-    <div className='h-[70%] flex items-center justify-center border '>
+    <div className='h-screen flex items-center  justify-around border p-10 '>
       <form 
-      className='h-[90%] w-75 flex flex-col items-center justify-center bg-purple-400 rounded-2xl py-1 gap-4'
+      className='h-90 w-75 flex flex-col items-center justify-around bg-purple-400 rounded-2xl py-1 px-2 gap-2'
       onSubmit={(e)=>{
         props.form(e)
       }}
@@ -18,16 +19,17 @@ function Form(props) {
          onChange={(e)=>{
             props.setTitle(e.target.value);
          }}
-         className='bg-neutral-50 w-[90%] h-10 px-2 rounded outline-none ' />
+         className='bg-neutral-50 w-full h-10 px-2 rounded outline-none ' />
         <textarea type="text"
          placeholder='write'
          value={props.discription}
          onChange={(e)=>{
           props.setDiscription(e.target.value);
          }}
-          className='bg-neutral-50 w-[90%] h-40 px-2 rounded outline-none  resize-none ' />
-        <input type="submit" value="Add" className='bg-violet-600 text-neutral-50 text-[12px] font-semibold px-14 py-1 rounded-2xl ' />
+          className='bg-neutral-50 w-full h-55 px-2 rounded outline-none  resize-none ' />
+        <input type="submit" value="Add" className='bg-violet-600 text-neutral-50 text-[12px] font-semibold px-14 py-2 rounded-2xl ' />
       </form>
+      <FormText />
     </div>
   )
 }
